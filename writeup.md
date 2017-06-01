@@ -32,33 +32,33 @@ Writeup :
 
 Notebook Aanlysis
 
-1. Run the functions provided in the notebook on test images
+  1. Run the functions provided in the notebook on test images
 
-  - First just run each of the cells in the notebook, examine the code and the results of each.
-    ![warped](/misc/0601warped.png)
-  - Run the simulator in "Training Mode" and record some data. 
-  - Change the data directory path (path = '../log_dataset/IMG/*') to be the directory where saved data
-  - Test out the functions provided on new data
-  - Write new functions to report and map out detections of obstacles and rock samples
-    ![rock_tresh](/misc/0601rock_tresh.png)
-  - Populate the process_image() function 
-  
-2. Populate the process_image() function
+      - First just run each of the cells in the notebook, examine the code and the results of each.
+        ![warped](/misc/0601warped.png)
+      - Run the simulator in "Training Mode" and record some data. 
+      - Change the data directory path (path = '../log_dataset/IMG/*') to be the directory where saved data
+      - Test out the functions provided on new data
+      - Write new functions to report and map out detections of obstacles and rock samples
+        ![rock_tresh](/misc/0601rock_tresh.png)
+      - Populate the process_image() function 
 
-  - Populate with the appropriate steps/functions to go from a raw image to a worldmap.
-  - Run the cell that calls process_image() using moviepy functions to create video output
-    ![process](/misc/0601process.png)
+  2. Populate the process_image() function
+
+      - Populate with the appropriate steps/functions to go from a raw image to a worldmap.
+      - Run the cell that calls process_image() using moviepy functions to create video output
+        ![process](/misc/0601process.png)
 
 Autonomous Navigation and Mapping
 
-1. Modify code to allow rover to navigate
+  1. Modify code to allow rover to navigate
 
-  - Fill in the 'perception_step()' function within the perception.py script
-  - Fill in the 'decision_step()' function within the decision.py script
-  - Run the simulator in "Autonomous Mode"
+      - Fill in the 'perception_step()' function within the perception.py script
+      - Fill in the 'decision_step()' function within the decision.py script
+      - Run the simulator in "Autonomous Mode"
 
-2. Iterate on perception and decision function
-  
-  - modify code and run the simulator until  rover does a reasonable job of navigating and mapping
+  2. Iterate on perception and decision function
+
+      - modify code and run the simulator until  rover does a reasonable job of navigating and mapping
   
 
