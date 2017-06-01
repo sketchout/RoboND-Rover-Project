@@ -54,7 +54,14 @@ Autonomous Navigation and Mapping
   1. Modify code to allow rover to navigate
 
       - Fill in the 'perception_step()' function within the perception.py script
+      
+          1) rotate_pix(), translate_pix() TODO
+          2) perception_step() TODO
+          
       - Fill in the 'decision_step()' function within the decision.py script
+      
+          1) if Rover.near_sample 
+      
       - Run the simulator in "Autonomous Mode"
       
           1) Screen resoultion : 800 x 600 Windowed
