@@ -3,8 +3,8 @@ import cv2
 
 def obstacle_thresh(img, rgb_thresh=(80, 80, 80)):      # black
     obstacle_select = np.zeros_like(img[:,:,0])
-    below_thresh = (img[:,:,0] < rgb_thresh[0]) \
-            & (img[:,:,1] < rgb_thresh[1]) \
+    below_thresh = (img[:,:,0] > rgb_thresh[0]) \
+            & (img[:,:,1] > rgb_thresh[1]) \
             & (img[:,:,2] < rgb_thresh[2])
     obstacle_select[below_thresh] = 1
     return obstacle_select
@@ -34,8 +34,11 @@ def rock_thresh(img):
     upper_yellow = np.array([55,255,255], dtype = "uint8")   # hsv space
 
     # Convert BGR to HSV
-    img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV, 3)       # mask yellow
+    img_hsv = cv2.cvtColor(img, cv2.COLOR_RGB2HSV, 3)       # mask yellow
     mask_rock = cv2.inRange(img_hsv, lower_yellow, upper_yellow)
+
+    # Bitwisze-AND mask and original image
+    # res = cv2.bitwise_and(img, img, mask=mask_rock)
 
     return mask_rock
 
@@ -127,9 +130,10 @@ def perception_step(Rover):
         # Example: Rover.vision_image[:,:,0] = obstacle color-thresholded binary image
         #          Rover.vision_image[:,:,1] = rock_sample color-thresholded binary image
         #          Rover.vision_image[:,:,2] = navigable terrain color-thresholded binary image
-    Rover.vision_image[:, :, 0] = obstacle_threshed*255
-    Rover.vision_image[:, :, 1] = rock_threshed*255
+    Rover.vision_image[:, :, 0] = obstacle_threshed
+    Rover.vision_image[:, :, 1] = rock_threshed
     Rover.vision_image[:, :, 2] = threshed*255
+
     # 5) Convert map image pixel values to rover-centric coords
     xpix, ypix = rover_coords(threshed)
     rock_xpix, rock_ypix = rover_coords(rock_threshed)

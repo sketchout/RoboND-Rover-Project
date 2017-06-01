@@ -9,6 +9,17 @@ def decision_step(Rover):
     # Here you're all set up with some basic functionality but you'll need to
     # improve on this decision tree to do a good job of navigating autonomously!
 
+    # If in a state where want to pickup a rock send pickup command
+    if Rover.near_sample:
+        Rover.throttle = 0
+        # Set brake to stored brake value
+        Rover.brake = Rover.brake_set
+        Rover.steer = 0
+        Rover.mode = 'stop'
+
+        if Rover.vel == 0 and not Rover.picking_up:
+            Rover.send_pickup = True
+
     # Example:
     # Check if we have vision data to make decisions with
     if Rover.nav_angles is not None:
@@ -67,16 +78,6 @@ def decision_step(Rover):
         Rover.steer = 0
         Rover.brake = 0
 
-    # If in a state where want to pickup a rock send pickup command
-    if Rover.near_sample:
-        Rover.throttle = 0
-        # Set brake to stored brake value
-        Rover.brake = Rover.brake_set
-        Rover.steer = 0
-        Rover.mode = 'stop'
-
-        if Rover.vel == 0 and not Rover.picking_up:
-            Rover.send_pickup = True
 
     return Rover
 
