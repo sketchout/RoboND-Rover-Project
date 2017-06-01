@@ -41,7 +41,8 @@ Notebook Aanlysis
       - Test out the functions provided on new data
       - Write new functions to report and map out detections of obstacles and rock samples
         ![rock_tresh](/misc/0601rock_tresh.png)
-      - Populate the process_image() function 
+      - Define the functions used to do coordinate transforms
+        ![polar](/misc/0601polar.png)
 
   2. Populate the process_image() function
 
