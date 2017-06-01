@@ -40,9 +40,9 @@ Notebook Aanlysis
       - Change the data directory path (path = '../log_dataset/IMG/*') to be the directory where saved data
       - Test out the functions provided on new data
       - Write new functions to report and map out detections of obstacles and rock samples
-        ![rock_tresh](/misc/0601rock_tresh.png)
+          ![rock_tresh](/misc/0601rock_tresh.png)
       - Define the functions used to do coordinate transforms
-        ![polar](/misc/0601polar.png)
+          ![polar](/misc/0601polar.png)
 
   2. Populate the process_image() function
 
