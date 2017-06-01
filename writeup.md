@@ -35,6 +35,7 @@ Notebook Aanlysis
 1. Run the functions provided in the notebook on test images
 
   - First just run each of the cells in the notebook, examine the code and the results of each.
+    ![warped](/misc/0601warped.png)
   - Run the simulator in "Training Mode" and record some data. 
   - Change the data directory path (path = '../log_dataset/IMG/*') to be the directory where saved data
   - Test out the functions provided on new data
