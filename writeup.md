@@ -39,14 +39,14 @@ Notebook Aanlysis
   - Run the simulator in "Training Mode" and record some data. 
   - Change the data directory path (path = '../log_dataset/IMG/*') to be the directory where saved data
   - Test out the functions provided on new data
-  - Write new functions to report and map out detections of obstacles and rock samples (yellow rocks)
+  - Write new functions to report and map out detections of obstacles and rock samples
   - Populate the process_image() function 
   
 2. Populate the process_image() function
 
   - Populate with the appropriate steps/functions to go from a raw image to a worldmap.
   - Run the cell that calls process_image() using moviepy functions to create video output
-
+    ![process](/misc/0601process.png)
 
 Autonomous Navigation and Mapping
 
