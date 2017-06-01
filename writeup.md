@@ -56,8 +56,9 @@ Autonomous Navigation and Mapping
       - Fill in the 'perception_step()' function within the perception.py script
       - Fill in the 'decision_step()' function within the decision.py script
       - Run the simulator in "Autonomous Mode"
-        1) Screen resoultion : 800 x 600 Windowed
-        2) Graphics quality : Fantastic
+      
+          1) Screen resoultion : 800 x 600 Windowed
+          2) Graphics quality : Fantastic
 
   2. Iterate on perception and decision function
 
