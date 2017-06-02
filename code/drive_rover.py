@@ -165,6 +165,7 @@ def send_control(commands, image_string1, image_string2):
         data,
         skip_sid=True)
     eventlet.sleep(0)
+
 # Define a function to send the "pickup" command
 def send_pickup():
     print("Picking up")
