@@ -37,10 +37,12 @@ Notebook Aanlysis
       - First just run each of the cells in the notebook, examine the code and the results of each.
           ![warped](/misc/0601warped.png)
       - Run the simulator in "Training Mode" and record some data.
-      - Change the data directory path (path = '../log_dataset/IMG/*') to be the directory where saved data.
-      - Test out the functions provided on new data.
+        1) Change the data directory path (path = '../log_dataset/IMG/*') to be the directory where saved data.
+        2) Test out the functions provided on new data.
       - Write new functions to report and map out detections of obstacles and rock samples.
           ![rock_tresh](/misc/0601rock_tresh.png)
+          1) Add 'obstacle_thresh()'' to check the obstacles
+          2) Add 'rock_thresh()'' to check the rocks
       - Define the functions used to do coordinate transforms.
           ![polar](/misc/0601polar.png)
 
@@ -49,6 +51,12 @@ Notebook Aanlysis
       - Populate with the appropriate steps/functions to go from a raw image to a worldmap.
       - Run the cell that calls process_image() using moviepy functions to create video output
           ![process](/misc/0601process.png)
+          1) Define source and destication points
+          2) Apply perspective transform with 'perspect_transform()'
+          3) Apply color threashold to navigable/obstacles/rock with 'color_thresh(),obstacle_thresh(),rock_thresh()'
+          4) Convert image pixel to rover-centric coords with 'rover_coord()'
+          5) Convert rover-centric coords to world coords with 'pix_to_world()'
+          6) Update worldmap
 
 Autonomous Navigation and Mapping
 
@@ -56,17 +64,28 @@ Autonomous Navigation and Mapping
 
       - Fill in the 'perception_step()' function within the perception.py script
 
-          1) rotate_pix(), translate_pix() TODO
-          2) perception_step() TODO
+          1) 'rotate_pix()' : convert yaw to radian and apply to rotation
+          2) 'translate_pix()' : apply a scaling and a translation
+          2) perception_step() : apply code which tested in the notebook
+              (1) Define source and destication points for perspective transform
+              (2) Apply perspective transform
+              (3) Apply color threashold to navigable/obstacles/rock
+              (4) Update Rover.vision_image (Rover.vision_image[:, :, 2] = threshed * 245)
+              (5) Convert image pixel to rover-centric coords
+              (6) Convert rover-centric coords to world coords
+              (7) Update Rover worldmap (to be displayed on right side of screen)
+              (8) Convert rover-centric pixel positions to polar coordinates
 
       - Fill in the 'decision_step()' function within the decision.py script
 
-          1) if Rover.near_sample
+          1) check condition with 'if Rover.near_sample:'
+          2) set Rover.mode ='stop' and set Rover.send_pickup = True
 
       - Run the simulator in "Autonomous Mode"
 
-          1) Screen resoultion : 800 x 600 Windowed
-          2) Graphics quality : Fantastic
+          1) activate RoboND & execute 'python drive_rover.py'
+          2) Screen resoultion : 800 x 600 Windowed
+          3) Graphics quality : Fantastic
 
   2. Iterate on perception and decision function
 
